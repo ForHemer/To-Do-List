@@ -1,4 +1,5 @@
 import Task from './task.js';
+import taskCompleted from './removeCompleted.js';
 
 class displayTask {
   static displayTasks() {
