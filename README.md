@@ -49,6 +49,7 @@ In order to install a local version of this project and please do the following 
 - Go to the [repository](https://github.com/ForHemer/To-Do-List)  and clone it with `git clone git@github.com:ForHemer/To-Do-List.git` .
 - open the repository cloned with `cd To-Do-List`
 - if your code editor is VsCode type `code .`
+- To build it `npm run build`
 - and enjoy!
 
 
