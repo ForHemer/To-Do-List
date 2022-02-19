@@ -1,4 +1,63 @@
+/* eslint-disable max-classes-per-file */
 import Task from './task.js';
+
+class Store {
+  static getTasks() {
+    let tasks;
+    if (localStorage.getItem('tasks') === null) {
+      tasks = [];
+    } else {
+      tasks = JSON.parse(localStorage.getItem('tasks'));
+    }
+
+    return tasks;
+  }
+
+  static addTask(task) {
+    const tasks = Store.getTasks();
+    tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+
+  static removeTask(elem) {
+    if (elem.classList.contains('remove-btn')) {
+      const tasks = Store.getTasks();
+      if (tasks.length === 1) {
+        tasks.pop();
+      } else {
+        tasks.splice(parseInt(elem.id, 2), 1);
+
+        tasks.forEach((element, index) => {
+          element.id = index + 1;
+        });
+      }
+      index = tasks.length;
+
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+  }
+
+  static modifyTask(elem) {
+    const tasks = Store.getTasks();
+    tasks[elem.id].description = elem.innerHTML;
+
+    tasks.forEach((element, index) => {
+      element.id = index + 1;
+    });
+    index = tasks.length;
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+
+  static CompletedTask(elem) {
+    const tasks = Store.getTasks();
+    tasks[elem.id].completed = true;
+    tasks.forEach((element, index) => {
+      element.id = index + 1;
+    });
+    index = tasks.length;
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+}
 
 class displayTask {
   static displayTasks() {
@@ -26,65 +85,6 @@ class displayTask {
 
   static clearFields() {
     document.querySelector('#inputTask').value = '';
-  }
-}
-
-class Store {
-  static getTasks() {
-    let tasks;
-    if (localStorage.getItem('tasks') === null) {
-      tasks = [];
-    } else {
-      tasks = JSON.parse(localStorage.getItem('tasks'));
-    }
-
-    return tasks;
-  }
-
-  static addTask(task) {
-    const tasks = Store.getTasks();
-    tasks.push(task);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }
-
-  static removeTask(elem) {
-    if (elem.classList.contains('remove-btn')) {
-      const tasks = Store.getTasks();
-      if (tasks.length === 1) {
-        tasks.pop();
-      } else {
-        tasks.splice(parseInt(elem.id), 1);
-
-        tasks.forEach((element, index) => {
-          element.id = index + 1;
-        });
-      }
-      index = tasks.length;
-
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
-  }
-
-  static modifyTask(elem) {
-    const tasks = Store.getTasks();
-    console.log(elem.id);
-    tasks[elem.id].description = elem.innerHTML;
-
-    tasks.forEach((element, index) => {
-      element.id = index + 1;
-    });
-    index = tasks.length;
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }
-
-  static CompletedTask(elem) {
-    const tasks = Store.getTasks();
-    tasks[elem.id].completed = true;
-    tasks.forEach((element, index) => {
-      element.id = index + 1;
-    });
-    index = tasks.length;
-    localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 }
 
@@ -147,7 +147,6 @@ document.querySelector('.list').addEventListener('change', (e) => {
   e.preventDefault();
 
   if (e.target.classList.contains('taskStatus')) {
-    console.log(e.target.nextElementSibling);
     if (e.target.checked) {
       // do something
       e.target.nextElementSibling.classList.add('line');
@@ -160,7 +159,6 @@ document.querySelector('.clrCompleted').addEventListener('click', (e) => {
   e.preventDefault();
   let tasks = Store.getTasks();
   const arr1 = tasks.filter((el) => el.completed === false);
-  console.log(arr1);
   tasks = arr1;
   localStorage.setItem('tasks', JSON.stringify(tasks));
 
