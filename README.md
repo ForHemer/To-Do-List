@@ -11,7 +11,8 @@ TO-DO LIST is a basic website that allows users to add/remove task from a to-do 
 
 ## Screenshot
 
-![Screenshot](Screenshot.png)
+![Screenshot](https://user-images.githubusercontent.com/88809610/154808929-c35b5e17-57a9-4757-a232-d576ae57b01a.png)
+
 
 ## Built With
 
@@ -44,7 +45,7 @@ To get a local copy up and running follow these simple example steps.
 In order to install a local version of this project and please do the following steps:
 - Install the latest version of any code editor.
 - install the latest version of GIT.
-- Go to the repository and clone it [Repository Link](https://github.com/ForHemer/To-Do-List).
+- Go to the [repository](https://github.com/ForHemer/To-Do-List) and clone it.
 
 
 ## Author
