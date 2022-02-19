@@ -45,7 +45,11 @@ To get a local copy up and running follow these simple example steps.
 In order to install a local version of this project and please do the following steps:
 - Install the latest version of any code editor.
 - install the latest version of GIT.
-- Go to the [repository](https://github.com/ForHemer/To-Do-List) and clone it.
+- open your terminal
+- Go to the [repository](https://github.com/ForHemer/To-Do-List)  and clone it with `git clone git@github.com:ForHemer/To-Do-List.git` .
+- open the repository cloned with `cd To-Do-List`
+- if your code editor is VsCode type `code .`
+- and enjoy!
 
 
 ## Author
