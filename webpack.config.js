@@ -8,9 +8,6 @@ module.exports = {
     static: './dist',
   },
   entry: './src/index.js',
-  devServer: {
-    static: './dist',
-  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Development',
