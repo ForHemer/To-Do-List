@@ -44,13 +44,13 @@ To get a local copy up and running follow these simple example steps.
 In order to install a local version of this project and please do the following steps:
 - Install the latest version of any code editor.
 - install the latest version of GIT.
-- Go to the repository and clone it [Repository Link](https://github.com/david-lafontant/To-Do-List/).
+- Go to the repository and clone it [Repository Link](https://github.com/ForHemer/To-Do-List).
 
 
 ## Author
 
 
-👤 **David Lafontant**
+👤 **Hemerson Foreste**
 
 
 
@@ -58,7 +58,7 @@ In order to install a local version of this project and please do the following 
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/david-lafontant/To-Do-List/issues).
+Feel free to check the [issues page](https://github.com/ForHemer/To-Do-List/issues).
 
 ## Show your support
 
