@@ -8,15 +8,33 @@ class displayTask {
   }
 
   static addTaskToList(task) {
-    const elementList = document.querySelector('.list');
-    const listItem = document.createElement('li');
-    listItem.setAttribute('class', 'item');
+    if(task.completed === true) {
 
-    listItem.innerHTML = `<input type="checkbox" id='${task.id}' name="taskStatus" class = 'taskStatus'>
-                      <p class='description edit' contenteditable='true' id='${task.id}'>${task.description}</p>
-                      <i class="fas fa-trash-alt remove-btn" id='${task.id}'></i>`;
+      const elementList = document.querySelector('.list');
+      const listItem = document.createElement('li');
+      listItem.setAttribute('class', 'item');
+  
+      listItem.innerHTML = `<input type="checkbox" id='${task.id}' name="taskStatus" class = 'taskStatus' checked>
+                        <p class='description edit line' class="line" contenteditable='true' id='${task.id}'>${task.description}</p>
+                        <i class="fas fa-trash-alt remove-btn" id='${task.id}'></i>`;
+  
+      elementList.appendChild(listItem);
+    }
+    else{
+        const elementList = document.querySelector('.list');
+      const listItem = document.createElement('li');
+      listItem.setAttribute('class', 'item');
+  
+      listItem.innerHTML = `<input type="checkbox" id='${task.id}' name="taskStatus" class = 'taskStatus'>
+                        <p class='description edit' contenteditable='true' id='${task.id}'>${task.description}</p>
+                        <i class="fas fa-trash-alt remove-btn" id='${task.id}'></i>`;
+  
+      elementList.appendChild(listItem);
+  
+    }
 
-    elementList.appendChild(listItem);
+    
+
   }
 
   static deleteTask(el) {
@@ -77,8 +95,9 @@ class Store {
   }
 
   static CompletedTask(elem) {
-    const tasks = Store.getTasks();
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
     tasks[elem.id - 1].completed = true;
+
     tasks.forEach((element, index) => {
       element.id = index + 1;
     });
@@ -150,7 +169,9 @@ document.querySelector('.list').addEventListener('change', (e) => {
     if (e.target.checked) {
       e.target.nextElementSibling.classList.add('line');
       Store.CompletedTask(e.target);
+      
     }
+
   }
 });
 
