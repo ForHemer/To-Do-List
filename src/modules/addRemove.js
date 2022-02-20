@@ -8,33 +8,27 @@ class displayTask {
   }
 
   static addTaskToList(task) {
-    if(task.completed === true) {
-
+    if (task.completed === true) {
       const elementList = document.querySelector('.list');
       const listItem = document.createElement('li');
       listItem.setAttribute('class', 'item');
-  
+
       listItem.innerHTML = `<input type="checkbox" id='${task.id}' name="taskStatus" class = 'taskStatus' checked>
                         <p class='description edit line' class="line" contenteditable='true' id='${task.id}'>${task.description}</p>
                         <i class="fas fa-trash-alt remove-btn" id='${task.id}'></i>`;
-  
+
       elementList.appendChild(listItem);
-    }
-    else{
-        const elementList = document.querySelector('.list');
+    } else {
+      const elementList = document.querySelector('.list');
       const listItem = document.createElement('li');
       listItem.setAttribute('class', 'item');
-  
+
       listItem.innerHTML = `<input type="checkbox" id='${task.id}' name="taskStatus" class = 'taskStatus'>
                         <p class='description edit' contenteditable='true' id='${task.id}'>${task.description}</p>
                         <i class="fas fa-trash-alt remove-btn" id='${task.id}'></i>`;
-  
+
       elementList.appendChild(listItem);
-  
     }
-
-    
-
   }
 
   static deleteTask(el) {
@@ -169,9 +163,7 @@ document.querySelector('.list').addEventListener('change', (e) => {
     if (e.target.checked) {
       e.target.nextElementSibling.classList.add('line');
       Store.CompletedTask(e.target);
-      
     }
-
   }
 });
 
