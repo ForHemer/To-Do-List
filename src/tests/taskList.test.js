@@ -31,3 +31,21 @@ describe('addNew method', () => {
     expect(list.storage[1]).toBe(item2);
   });
 });
+
+describe('removeItem method', () => {
+  test('Removes the item from the storage of TaskList', () => {
+    list.removeItem('1');
+    expect(list.storage).toHaveLength(1);
+  });
+
+  test('Removes the correct item from the storage of TaskList', () => {
+    expect(list.storage[0]).toHaveProperty('index', 2);
+  });
+});
+
+describe('Set index', () => {
+  test('Set the index properly', () => {
+    list.setIndexes();
+    expect(list.storage[0]).toHaveProperty('index', 1);
+  });
+});
