@@ -11,7 +11,7 @@ TO-DO LIST is a basic website that allows users to add/remove task from a to-do 
 
 ## Screenshot
 
-![Screenshot](https://user-images.githubusercontent.com/88809610/154808929-c35b5e17-57a9-4757-a232-d576ae57b01a.png)
+![Screenshot from 2022-02-24 23-41-47](https://user-images.githubusercontent.com/88809610/155655442-dd097259-bfb1-43ce-bf22-49fa41daddcf.png)
 
 
 ## Built With
