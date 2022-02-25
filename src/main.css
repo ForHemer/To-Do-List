@@ -40,7 +40,7 @@ li {
   grid-template-columns: 1fr 6fr 1fr 1fr;
   justify-items: start;
   align-items: center;
-  border-bottom: 1px solid rgb(196, 196, 196);   
+  border-bottom: 1px solid rgb(196, 196, 196);
 }
 
 li img {
