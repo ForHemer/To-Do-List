@@ -50,6 +50,7 @@ In order to install a local version of this project and please do the following 
 - open the repository cloned with `cd To-Do-List`
 - if your code editor is VsCode type `code .`
 - To build it `npm run build`
+- To test it `npm run test`
 - and enjoy!
 
 
