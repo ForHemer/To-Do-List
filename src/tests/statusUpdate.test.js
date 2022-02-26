@@ -1,4 +1,4 @@
-import changeStatus from '../__mocks__/statusUpdate.js';
+import changeStatus from '../_mocks_/statusUpdate.js';
 
 jest.mock('../modules/statusUpdate.js');
 
